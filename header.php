@@ -12,7 +12,12 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php $wooeshop_theme_options = wooeshop_theme_options(); ?>
+<?php 
+
+global $wooeshop_theme_options;
+$wooeshop_theme_options = wooeshop_theme_options(); 
+
+?>
 
 <div class="wrapper">
 
