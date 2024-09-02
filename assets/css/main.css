@@ -751,6 +751,47 @@ a.added_to_cart {
     }
 }
 
+/*============================= Search form ============================*/
+
+.aws-container .aws-search-form {
+    height: 38px;
+}
+
+.aws-container .aws-search-field {
+    border-right-color: #ffc107;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.aws-container .aws-search-field:focus {
+    border-color: var(--accent-color);
+}
+
+.aws-container .aws-search-field::placeholder {
+    font-size: 1rem;
+    color: var(--gray-color);
+}
+
+.aws-container .aws-search-form .aws-form-btn {
+    background: #fff;
+    border: 1px solid #ffc107;
+}
+
+.aws-container .aws-search-form .aws-form-btn:hover {
+    background: #ffc107;
+}
+
+.aws-container .aws-search-form .aws-form-btn:hover > span {
+    color: #000;
+}
+
+.aws-container .aws-search-form .aws-search-btn_icon {
+    color: #FFD333;
+}
+
+/*============================= Search form ============================*/
+
 @media only screen and (max-width : 500px) {
     .product-content-details .nav-tabs .nav-link {
         padding-left: 8px;
