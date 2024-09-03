@@ -68,7 +68,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', function ( $fragments ) {
 add_filter('woocommerce_breadcrumb_defaults', function(){
 	return array(
 		'delimiter'   => '',
-		'wrap_before' => '<div class="container"><div class="row"><div class="col-12"><nav class="breadcrumbs"><ul>',
+		'wrap_before' => '<div class="container-fluid"><div class="row"><div class="col-12"><nav class="breadcrumbs"><ul>',
 		'wrap_after'  => '</ul></nav></div></div></div>',
 		'before'      => '<li>',
 		'after'       => '</li>',

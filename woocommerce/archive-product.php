@@ -2,7 +2,7 @@
 
 <?php do_action( 'woocommerce_before_main_content' ); ?>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-3 col-md-4">
 			<?php do_action( 'woocommerce_sidebar' ); ?>
