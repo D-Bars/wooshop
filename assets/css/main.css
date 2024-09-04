@@ -907,3 +907,21 @@ section.widget {
         padding-right: unset !important;
     }
 }
+
+.home-categories a{
+    text-decoration: unset;
+    transition: .4s;
+}
+
+.home-categories a:hover{
+    color: #FFD333;
+}
+
+.categories-home{
+    font-size: 25px;
+    padding-bottom: 1vw;
+}
+
+.categories-home span{
+    font-size: 18px;
+}

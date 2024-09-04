@@ -57,3 +57,8 @@ add_action('widgets_init', function(){
 		)
 	);
 });
+
+remove_action('woocommerce_shop_loop_subcategory_title','woocommerce_template_loop_category_title', 10);
+add_action('woocommerce_shop_loop_subcategory_title', function($category){
+	echo "<h5 class='mt-2 categories-home'>{$category->name}<span>({$category->count})</span></h5>";
+});
