@@ -2,8 +2,6 @@
 
 <?php do_action( 'woocommerce_before_main_content' ); ?>
 
-<div class="container-fluid">
-	<div class="row">
 		<div class="col-lg-3 col-md-4">
 			<?php do_action( 'woocommerce_sidebar' ); ?>
 		</div><!-- ./col-lg-3 col-md-4 -->
@@ -39,11 +37,13 @@
 				
 			</div><!-- ./row -->
 
-			<?php
-				if ( woocommerce_product_loop() ) {
-					do_action( 'woocommerce_before_shop_loop' );
+			<?php if ( woocommerce_product_loop() ) { ?>
+
+					<div class="d-flex justify-content-between align-items-center wooeshop-ordering mb-4">
+						<?php do_action( 'woocommerce_before_shop_loop' ); ?>
+					</div>
 				
-					woocommerce_product_loop_start();
+					<?php woocommerce_product_loop_start();
 				
 					if ( wc_get_loop_prop( 'total' ) ) {
 						while ( have_posts() ) {
@@ -64,9 +64,6 @@
 			
 			?>
 		</div><!-- ./col-lg-9 col-md-8 -->
-
-	</div><!-- ./row -->
-</div><!-- ./container -->
 
 <?php do_action( 'woocommerce_after_main_content' ); ?>
 
