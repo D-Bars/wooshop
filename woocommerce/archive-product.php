@@ -2,11 +2,15 @@
 
 <?php do_action( 'woocommerce_before_main_content' ); ?>
 
+<?php 
+$content__class= is_search() ? 'col-12' : 'col-lg-9 col-md-8';
+?>
+<?php if ( !is_search() ) : ?>
 		<div class="col-lg-3 col-md-4">
 			<?php do_action( 'woocommerce_sidebar' ); ?>
 		</div><!-- ./col-lg-3 col-md-4 -->
-
-		<div class="col-lg-9 col-md-8">
+<?php endif; ?>
+		<div class="<?php echo $content__class; ?>">
 			<div class="row">
 				<div class="col-12">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
