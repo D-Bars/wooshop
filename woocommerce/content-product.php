@@ -25,8 +25,13 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 
-<div <?php wc_product_class( 'col-lg-3 col-md-4 col-sm-6 mb-3', $product ); ?>>
+<?php $product__classes = is_front_page() ? 'col-lg-3 col-md-4 col-sm-6 mb-3' : 'col-lg-4 col-sm-6 mb-3'; ?>
+
+<div <?php wc_product_class( $product__classes, $product ); ?>>
     <div class="product-card">
+		<div class="ajax-loader">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/ripple.svg">
+		</div>
 		<?php
 		/**
 		 * Hook: woocommerce_before_shop_loop_item.

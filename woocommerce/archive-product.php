@@ -17,9 +17,52 @@
 						</h1>
 					<?php endif; ?>
 				</div><!-- ./col-12 -->
-
-				<?php do_action( 'woocommerce_archive_description' ); ?>
+				
+				<?php if ($shop__img = wooeshop__get__shop__thumb()) : ?>
+					<div class="col-4 col-sm-2">
+						<?php echo $shop__img; ?>
+					</div>
+					<div class="col-8 col-sm-10">
+						<?php do_action( 'woocommerce_archive_description' ); ?>
+					</div>
+					<div class="col-12">
+						<hr>
+					</div>
+				<?php else : ?>
+					<?php do_action( 'woocommerce_archive_description' ); ?>
+					<?php if(is_product_category()) : ?>
+						<div class="col-12">
+							<hr>
+						</div>
+					<?php endif; ?>
+				<?php endif; ?>
+				
 			</div><!-- ./row -->
+
+			<?php
+				if ( woocommerce_product_loop() ) {
+					do_action( 'woocommerce_before_shop_loop' );
+				
+					woocommerce_product_loop_start();
+				
+					if ( wc_get_loop_prop( 'total' ) ) {
+						while ( have_posts() ) {
+							the_post();
+				
+							do_action( 'woocommerce_shop_loop' );
+				
+							wc_get_template_part( 'content', 'product' );
+						}
+					}
+				
+					woocommerce_product_loop_end();
+				
+					do_action( 'woocommerce_after_shop_loop' );
+				} else {
+					do_action( 'woocommerce_no_products_found' );
+				}
+			
+			?>
 		</div><!-- ./col-lg-9 col-md-8 -->
 
 	</div><!-- ./row -->
