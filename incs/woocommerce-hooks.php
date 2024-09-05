@@ -93,3 +93,9 @@ function wooeshop__get__shop__thumb(){
 
 
 remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
+
+add_action('template_redirect', function(){
+	if( is_product()){
+		remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar',10);
+	}
+});
