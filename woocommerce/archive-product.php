@@ -18,6 +18,7 @@ $content__class= is_search() ? 'col-12' : 'col-lg-9 col-md-8';
 							<span><?php woocommerce_page_title(); ?></span>
 						</h1>
 					<?php endif; ?>
+					<?php woocommerce_output_all_notices(); ?>
 				</div><!-- ./col-12 -->
 				
 				<?php if ($shop__img = wooeshop__get__shop__thumb()) : ?>
