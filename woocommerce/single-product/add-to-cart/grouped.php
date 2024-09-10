@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 <form class="cart grouped_form" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
     <div class="table-responsive">
-        <table cellspacing="0" class="woocommerce-grouped-product-list group_table table table-bordered">
+        <table cellspacing="0" class="woocommerce-grouped-product-list group_table table table-bordered product-add2cart d-flex">
             <tbody>
 		    <?php
 		    $quantites_required      = false;

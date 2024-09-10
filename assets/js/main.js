@@ -60,6 +60,22 @@ jQuery(document).ready(function($) {
     $('body').on('added_to_cart', function(e, response_fragments, response_cart_hash, btn){
         btn.closest('.product-card').find('.ajax-loader').fadeOut();
     });
+
+
+    $('.quantity button').on('click', function(){
+        let btn = $(this);
+        let inputQty = btn.parent().find('.qty');
+        let prevValue = Number(inputQty.val());
+        let newValue = 1;
+        if(btn.hasClass('btn-plus')){
+            newValue = prevValue + 1;
+        }else{
+            if(prevValue > 1){
+                newValue = prevValue - 1;
+            }
+        }
+        inputQty.val(newValue);
+    })
 });
 
 Fancybox.bind("[data-fancybox]", {
