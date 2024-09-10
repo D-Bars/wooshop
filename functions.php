@@ -7,6 +7,7 @@
 add_action( 'after_setup_theme', function () {
 	load_theme_textdomain( 'wooeshop', get_template_directory() . '/languages' );
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnail' );
 

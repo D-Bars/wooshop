@@ -1,3 +1,3 @@
-        </div> <!-- ./row -->
-    </div> <!-- ./container-fluid -->
-</main> <!-- ./main -->
+        </div><!-- ./row -->
+    </div><!-- ./container -->
+</main><!-- ./main -->

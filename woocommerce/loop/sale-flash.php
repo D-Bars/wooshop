@@ -36,5 +36,3 @@ global $post, $product;
 	<?php endif; ?>
 
 </div><!-- ./product-card-offer -->
-
-

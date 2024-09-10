@@ -24,11 +24,20 @@ global $product;
 	<?php do_action( 'woocommerce_before_single_product' ); ?>
 </div>
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'col-12 producr-content-wrapper', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'col-12 product-content-wrapper', $product ); ?>>
 
 	<div class="row">
 
 		<div class="col-md-5 col-lg-4 mb-3">
+		<?php
+	/**
+	 * Hook: woocommerce_before_single_product_summary.
+	 *
+	 * @hooked woocommerce_show_product_sale_flash - 10
+	 * @hooked woocommerce_show_product_images - 20
+	 */
+	do_action( 'woocommerce_before_single_product_summary' );
+	?>
 			<div class="bg-white h-100">
 				<div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade">
 					<div class="carousel-inner">
