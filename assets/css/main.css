@@ -1028,14 +1028,16 @@ section.widget {
 
 /* Chrome, Safari, Edge, Opera */
 .product-add2cart input.qty::-webkit-outer-spin-button,
-.product-add2cart input.qty::-webkit-inner-spin-button {
+.product-add2cart input.qty::-webkit-inner-spin-button,
+.woocommerce-grouped-product-list-item input.qty::-webkit-inner-spin-button{
   -webkit-appearance: none;
   margin: 0;
   text-align: center;
 }
 
 /* Firefox */
-.product-add2cart input.qty[type=number] {
+.product-add2cart input.qty[type=number],
+.woocommerce-grouped-product-list-item input.qty::-webkit-inner-spin-button {
   -moz-appearance: textfield;
   text-align: center;
 }
@@ -1051,4 +1053,24 @@ section.widget {
 
 .product-content .woocommerce-variation-price span.price{
     text-align: left;
+}
+
+.woocommerce-grouped-product-list .woocommerce-grouped-product-list-item__price ins{
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.woocommerce-grouped-product-list .woocommerce-grouped-product-list-item__price del{
+    color: #0005;
+}
+
+.grouped_form .add2cart-btn{
+    margin-left: 0;
+}
+
+.product-type-external .add2cart-btn{
+    margin-left: 0;
+
 }
