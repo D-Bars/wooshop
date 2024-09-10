@@ -61,3 +61,7 @@ jQuery(document).ready(function($) {
         btn.closest('.product-card').find('.ajax-loader').fadeOut();
     });
 });
+
+Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
