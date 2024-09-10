@@ -1039,3 +1039,16 @@ section.widget {
   -moz-appearance: textfield;
   text-align: center;
 }
+
+.product-content .reset_variations{
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.product-content .variations label{
+    margin-right: 10px;
+}
+
+.product-content .woocommerce-variation-price span.price{
+    text-align: left;
+}
