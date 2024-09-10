@@ -79,6 +79,22 @@ global $product;
 		</div><!-- ./col-md-7 col-lg-8 mb-3 -->
 
 	</div><!-- ./row -->
+
+	<div class="row my-3">
+        <div class="col-12">
+            <div class="product-content-details bg-white p-4">
+
+			<?php do_action( 'woocommerce_after_single_product_summary' ); ?>
+
+			</div>
+        </div>
+    </div>
+
+	<?php 
+	woocommerce_upsell_display(); 
+	woocommerce_output_related_products();
+	?>
+
 </div><!-- ./col-12 producr-content-wrapper -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
