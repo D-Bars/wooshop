@@ -1083,7 +1083,7 @@ section.widget {
 /* Chrome, Safari, Edge, Opera */
 .product-add2cart input.qty::-webkit-outer-spin-button,
 .product-add2cart input.qty::-webkit-inner-spin-button,
-.woocommerce-grouped-product-list-item input.qty::-webkit-inner-spin-button{
+.woocommerce-grouped-product-list-item input.qty::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
   text-align: center;
@@ -1091,7 +1091,7 @@ section.widget {
 
 /* Firefox */
 .product-add2cart input.qty[type=number],
-.woocommerce-grouped-product-list-item input.qty::-webkit-inner-spin-button {
+.woocommerce-grouped-product-list-item input.qty::-webkit-inner-spin-button{
   -moz-appearance: textfield;
   text-align: center;
 }
@@ -1126,4 +1126,21 @@ section.widget {
 
 .product-type-external .add2cart-btn{
     margin-left: 0;
+}
+
+.shop_table .input-group .input-text{
+    width: 5px;
+}
+
+.woocommerce-cart-form input.qty[type="number"]::-webkit-outer-spin-button,
+.woocommerce-cart-form input.qty[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    text-align: center;
+}
+
+/* Убираем стрелочки для Firefox */
+.woocommerce-cart-form input.qty[type="number"] {
+    -moz-appearance: textfield;
+    text-align: center;
 }
