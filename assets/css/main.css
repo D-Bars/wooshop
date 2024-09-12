@@ -1144,3 +1144,36 @@ section.widget {
     -moz-appearance: textfield;
     text-align: center;
 }
+
+.shop_table td{
+    text-align: right;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.shop_table th{
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.shop_table ul{
+    list-style: none;
+}
+
+.shop_table .label-shipping{
+    margin-right: 8px;
+}
+
+.woocommerce-notices-wrapper ul {
+    list-style: none;
+}
+
+.woocommerce-notices-wrapper .woocommerce-error{
+    color: #FFF;
+    background: #dc3545;
+    padding: 1rem;
+}
+
+.woocommerce-cart-form__cart-item td{
+    text-align: center;
+}
