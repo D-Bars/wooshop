@@ -102,3 +102,11 @@ add_action('template_redirect', function(){
 
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+add_filter( 'woocommerce_default_address_fields' , function ( $fields ){
+	unset($fields['company'],$fields['address_2']);
+	return $fields;
+} );
+add_filter('woocommerce_order_button_html', function($btn){
+	$btn = str_replace('button alt', 'button alt btn btn-warning', $btn);
+	return '<div class="d-grid mt-3">'. $btn .'</div>';
+});
