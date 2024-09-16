@@ -1150,13 +1150,13 @@ section.widget {
     text-align: center;
 }
 
-.shop_table td{
+.cart_totals .shop_table_responsive td{
     text-align: right;
     color: var(--text-color);
     font-weight: 500;
 }
 
-.shop_table th{
+.cart_totals .shop_table_responsive th{
     color: var(--text-color);
     font-weight: 500;
 }
@@ -1271,6 +1271,23 @@ ul.woocommerce-error{
 }
 
 .wc_payment_methods{
+    list-style: none;
+    padding-left: 0;
+}
+
+.woocommerce-thankyou-order-received {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    padding: 10px;
+}
+
+.woocommerce-order-details,
+.woocommerce-customer-details {
+    padding: 20px 0;
+}
+
+.woocommerce-thankyou-order-details,
+.wc-bacs-bank-details{
     list-style: none;
     padding-left: 0;
 }
