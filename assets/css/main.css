@@ -1291,3 +1291,22 @@ ul.woocommerce-error{
     list-style: none;
     padding-left: 0;
 }
+
+.woocommerce-password-strength.short,
+.woocommerce-password-strength.bad{
+    color: #cc0000;
+}
+
+.woocommerce-password-strength.good{
+    color: #00A8EF;
+}
+
+.woocommerce-password-strength.strong{
+    color: #00a510;
+}
+
+.woocommerce-password-hint{
+    display: block;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
