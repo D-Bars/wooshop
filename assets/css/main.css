@@ -1213,7 +1213,8 @@ ul.woocommerce-error{
     flex-direction: column;
 }
 
-.woocommerce-checkout p .input-text {
+.woocommerce-checkout p .input-text ,
+.woocommerce-EditAccountForm p .input-text{
     display: block;
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
@@ -1309,4 +1310,13 @@ ul.woocommerce-error{
     display: block;
     border: 1px solid #ccc;
     padding: 10px;
+}
+
+.woocommerce-MyAccount-navigation ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.woocommerce-Addresses{
+    width: 100%;
 }
