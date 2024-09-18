@@ -29,6 +29,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 <div <?php wc_product_class( $product__classes, $product ); ?>>
     <div class="product-card">
+		<div class="wishlist-icon" data-id="<?php echo $product->get_id() ?>"><i class="fa-solid fa-heart"></i></div>
 		<div class="ajax-loader">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/ripple.svg">
 		</div>

@@ -80,6 +80,32 @@ jQuery(document).ready(function($) {
         inputQty.val(newValue);
         $('.update-cart').prop('disabled', false);
     })
+
+    $('.wishlist-icon').on('click', function(){
+        let wishBtn = $(this);
+        let productId = wishBtn.data('id');
+        let ajaxLoader = wishBtn.closest('.product-card').find('.ajax-loader');
+        $.ajax({
+            url: wooeshop_wishlist_object.url,
+            type: 'POST',
+            data: {
+                action: 'wooeshop_wishlist_action',
+                nonce: wooeshop_wishlist_object.nonce,
+                product_id: productId
+            },
+            beforeSend: function(){
+                ajaxLoader.fadeIn();
+            },
+            succes: function(res){
+                console.log(res);
+                ajaxLoader.fadeOut();
+            },
+            error: function(){
+                ajaxLoader.fadeOut();
+                alert('Error add to wishlist');
+            }
+        })
+    })
 });
 
 Fancybox.bind("[data-fancybox]", {

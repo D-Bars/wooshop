@@ -1320,3 +1320,16 @@ ul.woocommerce-error{
 .woocommerce-Addresses{
     width: 100%;
 }
+
+.wishlist-icon i{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.wishlist-icon i:hover{
+    color: var(--accent-color);
+}
