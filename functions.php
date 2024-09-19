@@ -46,7 +46,24 @@ add_action( 'wp_enqueue_scripts', function () {
 add_action( 'wp_ajax_wooeshop_wishlist_action', 'wooeshop_wishlist_action_cb' );
 add_action( 'wp_ajax_nopriv_wooeshop_wishlist_action', 'wooeshop_wishlist_action_cb' );
 function wooeshop_wishlist_action_cb (){
-	wooeshop_dump($_POST);
+	$product_id = (int) $_POST['product_id'];
+	$product = wc_get_product($product_id);
+
+	if( ! isset($_POST['nonce']) ){
+		echo ($_POST['nonce']);
+		echo json_encode( [ 'status' => 'error', 'answer' => __('Security error1', 'wooeshop') ] );
+		wp_die();
+	}
+
+	if( ! wp_verify_nonce( $_POST['nonce'], 'wooeshop_wishlist_nonce' ) ){
+		echo json_encode( [ 'status' => 'error', 'answer' => __('Security error2', 'wooeshop') ] );
+		wp_die();
+	}
+
+	if( ! $product || $product->get_status() != 'publish'){
+		echo json_encode( [ 'status' => 'error', 'answer' => __('Error product', 'wooeshop') ] );
+		wp_die();
+	}
 	wp_die();
 }
 
