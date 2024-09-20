@@ -69,10 +69,10 @@ function wooeshop_wishlist_action_cb (){
 
 	if ( false !== ($key = array_search( $product_id, $wishlist ))){
 		unset( $wishlist[$key] );
+		$answer = json_encode(['status' => 'success', 'answer' => __('The product has been removed from wishlist', 'wooeshop')]);
 	}else{
 		if( count($wishlist) >= 4 ){
 			array_shift($wishlist);
-			$answer = json_encode(['status' => 'success', 'answer' => __('The product has been removed from wishlist', 'wooeshop')]);
 		}
 		$wishlist[] = $product_id;
 		$answer = json_encode(['status' => 'success', 'answer' => __('The product has been added to wishlist', 'wooeshop')]);
