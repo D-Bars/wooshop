@@ -64,7 +64,32 @@ function wooeshop_wishlist_action_cb (){
 		echo json_encode( [ 'status' => 'error', 'answer' => __('Error product', 'wooeshop') ] );
 		wp_die();
 	}
+
+	$wishlist = wooeshop_get_wishlist();
+	wooeshop_dump($wishlist);
+
+	if ( false !== ($key = array_search( $product_id, $wishlist ))){
+		unset( $wishlist[$key] );
+	}else{
+		if( count($wishlist) >= 4 ){
+			array_shift($wishlist);
+			$answer = json_encode(['status' => 'success', 'answer' => __('The product has been removed from wishlist', 'wooeshop')]);
+		}
+		$wishlist[] = $product_id;
+		$answer = json_encode(['status' => 'success', 'answer' => __('The product has been added to wishlist', 'wooeshop')]);
+	}
+	$wishlist = implode(',', $wishlist);
+	setcookie('wooeshop_wishlist', $wishlist, time() + 3600 * 24 * 30, '/');
+
 	wp_die();
+}
+
+function wooeshop_get_wishlist(){
+	$wishlist = isset($_COOKIE['wooeshop_wishlist']) ? $_COOKIE['wooeshop_wishlist'] : [];
+	if($wishlist){
+		$wishlist = explode(',', $wishlist);
+	}
+	return $wishlist;
 }
 
 function wooeshop_dump( $data ) {

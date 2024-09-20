@@ -96,7 +96,7 @@ jQuery(document).ready(function($) {
             beforeSend: function(){
                 ajaxLoader.fadeIn();
             },
-            succes: function(res){
+            success: function(res){
                 console.log(res);
                 ajaxLoader.fadeOut();
             },
