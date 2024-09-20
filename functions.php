@@ -50,7 +50,6 @@ function wooeshop_wishlist_action_cb (){
 	$product = wc_get_product($product_id);
 
 	if( ! isset($_POST['nonce']) ){
-		echo ($_POST['nonce']);
 		echo json_encode( [ 'status' => 'error', 'answer' => __('Security error1', 'wooeshop') ] );
 		wp_die();
 	}
