@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
                 ajaxLoader.fadeIn();
             },
             success: function(res){
-                console.log(res);
+                wishBtn.toggleClass('in__wishlist');
                 ajaxLoader.fadeOut();
             },
             error: function(){

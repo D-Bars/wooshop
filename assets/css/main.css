@@ -1333,3 +1333,7 @@ ul.woocommerce-error{
 .wishlist-icon i:hover{
     color: var(--accent-color);
 }
+
+.in__wishlist{
+    color: var(--accent-color);
+}
