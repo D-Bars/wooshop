@@ -82,7 +82,11 @@ jQuery(document).ready(function($) {
     })
 
     $('.wishlist-icon').on('click', function(){
+        let lock = false;
         let wishBtn = $(this);
+        if( lock ){
+            wishBtn.css('display', none);
+        };
         let productId = wishBtn.data('id');
         let ajaxLoader = wishBtn.closest('.product-card').find('.ajax-loader');
         $.ajax({
@@ -94,13 +98,16 @@ jQuery(document).ready(function($) {
                 product_id: productId
             },
             beforeSend: function(){
+                lock = true;
                 ajaxLoader.fadeIn();
             },
             success: function(res){
+                lock = false;
                 wishBtn.toggleClass('in__wishlist');
                 ajaxLoader.fadeOut();
             },
             error: function(){
+                lock = false;
                 ajaxLoader.fadeOut();
                 alert('Error add to wishlist');
             }

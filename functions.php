@@ -91,6 +91,11 @@ function wooeshop_get_wishlist(){
 	return $wishlist;
 }
 
+function wooeshop_in_wishlist($product_id){
+	$wishlist = wooeshop_get_wishlist();
+	return false !== $key = array_search( $product_id, $wishlist );
+}
+
 function wooeshop_dump( $data ) {
 	echo "<pre>" . print_r( $data, 1 ) . "</pre>";
 }
